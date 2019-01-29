@@ -12,6 +12,12 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  let arr = str.split('');
+  for (let i in arr){
+    result.push(arr.join(''));
+    arr = arr.slice(1);
+  }
+  result.push('');
   return result;
 };
 
@@ -23,6 +29,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let test = arr.split('');
+  return test;
 };
 
 
@@ -66,6 +74,21 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let newArr = [];
+  for(let i in recipe.ingredients){
+    let breakPoint = ' ';
+    let newStr = recipe.ingredients[i];
+    newStr = newStr.slice(newStr.indexOf(breakPoint));
+    newArr.push(newStr);
+  }
+  for(let i in newArr){
+    let breakPoint = ' ';
+    let newStr = newArr[i];
+    newStr = newStr.slice(1);
+    newStr = newStr.slice(newStr.indexOf(breakPoint));
+    newStr = newStr.slice(1);
+    result.push(newStr);
+  };
   return result;
 }
 
@@ -78,6 +101,13 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let arr = [];
+  for (let i in recipe.ingredients){
+    let strArr = recipe.ingredients[i].split(' ');
+    strArr = strArr.slice(2);
+    arr = strArr.join(' ');
+    result.push(arr);
+  }
   return result;
 }
 
