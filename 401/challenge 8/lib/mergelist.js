@@ -7,7 +7,7 @@ let linkListB= new LinkList();
 
 const mergeList= function(a, b){
   if(a.head && b.head=== null){
-    throw new Error('__ERROR__ No link lists were entered');
+    return '__ERROR__ No link lists were entered';
   }else if(a.head=== null){
     return b;
   }else if(b.head=== null){
